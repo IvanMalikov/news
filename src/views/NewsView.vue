@@ -24,9 +24,7 @@ export default {
     const articles = ref([])
     onMounted(async () => {
       const key = process.env.VUE_APP_NEWS_API_KEY
-      const data = await axios.get(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${key}`, {
-        mode: 'no-cors'
-      })
+      const data = await axios.get(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${key}`)
       articles.value = data.data.articles
     })
     return {
